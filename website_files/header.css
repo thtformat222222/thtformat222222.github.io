@@ -1,0 +1,261 @@
+/* Header */
+.header-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 66;
+  width: 100%;
+  height: 76px;
+}
+.header-wrapper .head-content {
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.head-content .head-lf {
+  display: flex;
+  align-items: center;
+}
+.head-content .head-lf .logo {
+  width: 36px;
+  height: 36px;
+}
+.head-content .head-lf .head-nav {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+.head-content .head-lf .head-nav li {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+.head-content .head-lf .head-nav li a {
+  font-style: normal;
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 100px;
+  padding: 0 20px;
+  transition: all 0.3s ease-in-out;
+}
+.head-content .head-lf .head-nav li a:hover {
+  color: rgba(255, 255, 255, 0.55);
+}
+.head-content .head-lf .head-nav li a.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+.head-content .head-lf .head-nav li .divider {
+  display: block;
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 30px;
+}
+
+.head-content .head-search-wrapper {
+  position: relative;
+}
+.head-content .search-placeholder {
+  box-sizing: border-box;
+  width: 200px;
+  height: 36px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 12px;
+  line-height: 36px;
+  color: rgba(255, 255, 255, 0.5);
+  padding-left: 16px;
+  cursor: pointer;
+}
+.head-content .search-placeholder:hover {
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.17);
+}
+.head-content .search-placeholder::after {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  z-index: 2;
+  background: url("../images/search-icon-light.png") no-repeat;
+}
+
+/* 浅色背景下 */
+.head-light .head-lf .head-nav li a {
+  color: rgba(0, 0, 0, 0.85);
+}
+.head-light .head-lf .head-nav li a:hover {
+  color: rgba(0, 0, 0, 0.55);
+}
+.head-light .head-lf .head-nav li a.active {
+  color: #000000;
+  background: rgba(0, 0, 0, 0.05);
+}
+.head-light .head-lf .head-nav li .divider {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.head-light .search-placeholder {
+  color: rgba(51, 51, 51, 0.5);
+  background: rgba(0, 0, 0, 0.05);
+}
+.head-light .search-placeholder:hover {
+  color: rgba(51, 51, 51, 0.5);
+  background: rgba(0, 0, 0, 0.1);
+}
+.head-light .search-placeholder::after {
+  background: url("../images/search-icon-dark.png") no-repeat;
+}
+
+/* 搜索弹层 */
+.search-content {
+  box-sizing: border-box;
+  position: absolute;
+  top: -2px;
+  right: -10px;
+  z-index: 68;
+  width: 400px;
+  border-radius: 30px;
+  background: #fff;
+  padding: 20px;
+  /* display: none; */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
+}
+.search-content.show {
+  /* display: block; */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.search-content .search-del {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.search-content .search-tabs {
+  width: 134px;
+  height: 38px;
+  display: flex;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.08);
+  padding: 3px;
+}
+.search-content .search-tabs span {
+  display: block;
+  width: 50%;
+  height: 32px;
+  text-align: center;
+  line-height: 34px;
+  font-size: 14px;
+  color: #333333;
+  border-radius: 8px;
+}
+.search-content .search-tabs span:hover {
+  cursor: pointer;
+}
+.search-content .search-tabs span.active {
+  color: #236ee7;
+  background: #ffffff;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+}
+.search-ipt-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+.search-ipt-wrap .search-ipt-box {
+  box-sizing: border-box;
+  position: relative;
+  width: 304px;
+  height: 38px;
+}
+.search-ipt-wrap .search-ipt-box input {
+  outline: none;
+  border: none;
+  background: none;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  color: #333333;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0 8px 0 34px;
+}
+.search-ipt-wrap .search-ipt-box input::placeholder {
+  color: rgba(51, 51, 51, 0.5);
+}
+.search-ipt-wrap .search-ipt-box input:not(:placeholder-shown) {
+  background: rgba(0, 0, 0, 0.08);
+}
+.search-ipt-wrap .search-ipt-box img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 9px;
+  left: 8px;
+}
+.search-ipt-wrap .search-btn {
+  border: none;
+  width: 50px;
+  height: 38px;
+  line-height: 40px;
+  background: rgba(0, 122, 255, 0.1);
+  font-size: 13px;
+  text-align: center;
+  font-weight: bold;
+  color: #007aff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.search-ipt-wrap .search-btn:hover {
+  background: rgba(0, 122, 255, 0.2);
+}
+.search-content .search-quick {
+  padding-top: 16px;
+}
+.search-content .search-quick .search-quick-title {
+  font-size: 13px;
+  line-height: 24px;
+  color: #333333;
+}
+.search-content .search-quick .search-quick-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  padding-top: 6px;
+}
+.search-content .search-quick .search-quick-list a {
+  display: block;
+  height: 32px;
+  line-height: 34px;
+  font-size: 13px;
+  color: #666666;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.search-content .search-quick .search-quick-list a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
